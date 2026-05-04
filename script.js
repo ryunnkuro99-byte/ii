@@ -10,7 +10,7 @@ const SECTIONS = [
   {
     title: "Core Settings",
     apps: [
-      { name: "Settings",          icon: "icons/settings.png",       link: "intent://settings#Intent;scheme=android-app;end" },
+      { name: "Settings",          icon: "icons/settings.png",       link: "intent://com.android.settings/#Intent;scheme=android-app;end" },
       { name: "Wi-Fi Settings",    icon: "icons/wifi.png",           link: "intent:#Intent;action=android.settings.WIFI_SETTINGS;end" },
       { name: "Bluetooth",         icon: "icons/bluetooth.png",      link: "intent:#Intent;action=android.settings.BLUETOOTH_SETTINGS;end" },
       { name: "Accessibility",     icon: "icons/accessibility.png",  link: "intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end" },
