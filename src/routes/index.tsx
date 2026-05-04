@@ -4,23 +4,16 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
+  // The Luke Bypass launcher is a pure static site living in /public.
+  // Redirect to the static index.html so it loads in this preview AND
+  // works identically when deployed to GitHub Pages / Vercel.
+  if (typeof window !== "undefined") {
+    window.location.replace("/index.html");
+  }
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div style={{ minHeight: "100vh", background: "#0a0a0c", color: "#f5f6f8", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "system-ui" }}>
+      Loading Luke Bypass…
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
