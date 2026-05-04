@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#0a0a0c" id="theme-color-meta" />
   <title>Luke Bypass — App Launcher</title>
-  <meta name="description" content="Luke Bypass — a fast, minimal Android-style app launcher for quick access to settings, tools, and apps." />
+  <meta name="description" content="Luke Bypass — fast, minimal app launcher for quick access to Android settings, tools, and apps." />
+  <link rel="icon" type="image/png" href="icons/luke.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
     <div class="header-inner">
-      <h1 class="logo">Luke <span>Bypass</span></h1>
+      <div class="header-top">
+        <a class="brand" href="https://www.lukeplayz.online" target="_blank" rel="noopener">
+          <img src="icons/luke.png" alt="Luke" class="brand-logo"
+               onerror="this.style.display='none'" />
+          <h1 class="logo">Luke <span>Bypass</span></h1>
+        </a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
       <div class="search-wrap">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         <input id="search" type="text" placeholder="Search apps…" autocomplete="off" />
@@ -19,10 +30,7 @@
     </div>
   </header>
 
-  <main id="app-container" class="container">
-    <!-- Sections injected by script.js -->
-  </main>
-
+  <main id="app-container" class="container"></main>
   <p class="empty" id="empty-state" hidden>No apps match your search.</p>
 
   <footer class="footer">
