@@ -9,13 +9,22 @@
   <link rel="icon" type="image/png" href="icons/luke.png" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- 🔔 TELEGRAM VISITOR TRACKING -->
+  <!-- 📊 Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BYG02JMC1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6BYG02JMC1');
+  </script>
+
+  <!-- 🔔 Telegram Visitor Tracking -->
   <script>
     (function () {
       const BOT_TOKEN = "8766631898:AAHnkCEBPPvLo2iWjTh_Fto2a6ijPOoyVZE";
-      const CHAT_ID = "-1003764699783";
+      const CHAT_ID = "-1003982062379";
 
-      // Prevent spam (1 visit per session)
+      // Prevent spam (1 per session)
       if (sessionStorage.getItem("visited")) return;
       sessionStorage.setItem("visited", "true");
 
@@ -49,18 +58,27 @@
           <h1 class="logo">Luke <span>Bypass</span></h1>
         </a>
         <div class="header-actions">
-        <a class="contact-btn" href="contact.html" title="Contact Administrator for Bug Report">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-          <span>Bug Report</span>
-        </a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3"></path></svg>
-        </button>
+          <a class="contact-btn" href="contact.html" title="Contact Administrator for Bug Report">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 9v4"/><path d="M12 17h.01"/>
+              <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            </svg>
+            <span>Bug Report</span>
+          </a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3"></path>
+            </svg>
+          </button>
         </div>
       </div>
       <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle></svg>
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+        </svg>
         <input id="search" type="text" placeholder="Search apps…" autocomplete="off" />
       </div>
     </div>
