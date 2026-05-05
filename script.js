@@ -20,7 +20,7 @@ const APPS = [
   { name: "Login Google Account",       icon: "icons/google-account.png",    link: "intent://com.google.android.gsf.login.LoginActivity/#Intent;scheme=android-app;end" },
   { name: "Home Launcher",              icon: "icons/home.png",              link: "intent://com.sec.android.app.launcher/#Intent;scheme=android-app;end" },
   { name: "Google Maps",                icon: "icons/maps.png",              link: "intent://com.google.android.apps.maps/#Intent;scheme=android-app;end" },
-  { name: "*#0*#",                      icon: "icons/dialcode.png",          link: "tel:*#0*#/#Intent;scheme=android-app;end" },
+  { name: "*#0*#",                      icon: "icons/dialer.png",            link: "tel:*#0*#/#Intent;scheme=android-app;end" },
   { name: "Google Assistant",           icon: "icons/assistant.png",         link: "intent://com.google.android.apps.googleassistant/#Intent;scheme=android-app;end" },
   { name: "Gmail",                      icon: "icons/gmail.png",             link: "intent://com.google.android.gm/#Intent;scheme=android-app;end" },
   { name: "Samsung S9 Launcher",        icon: "icons/s9-launcher.png",       link: "https://galaxystore.samsung.com/detail/com.s9launcher.dir.launcher" },
