@@ -19,7 +19,7 @@ const APPS = [
   { name: "Android Hidden Settings",    icon: "icons/hidden.png",            link: "intent:#Intent;action=android.settings.SETTINGS;component=com.android.settings/.Settings;end" },
   { name: "Login Google Account",       icon: "icons/google-account.png",    link: "intent://com.google.android.gsf.login.LoginActivity/#Intent;scheme=android-app;end" },
   { name: "Home Launcher",              icon: "icons/home.png",              link: "intent://com.sec.android.app.launcher/#Intent;scheme=android-app;end" },
-  { name: "Google Maps",                icon: "icons/maps.png",              link: "intent:#Intent;package=com.google.android.apps.maps;end" },
+  { name: "Google Maps",                icon: "icons/maps.png",              link: "intent://com.google.android.apps.maps/#Intent;scheme=android-app;end" },
   { name: "*#0*#",                      icon: "icons/dialcode.png",          link: "tel:*#0*#/#Intent;scheme=android-app;end" },
   { name: "Google Assistant",           icon: "icons/assistant.png",         link: "intent://com.google.android.apps.googleassistant/#Intent;scheme=android-app;end" },
   { name: "Gmail",                      icon: "icons/gmail.png",             link: "intent://com.google.android.gm/#Intent;scheme=android-app;end" },
