@@ -17,7 +17,7 @@ const APPS = [
   { name: "Samsung Calculator",         icon: "icons/calculator.png",        link: "intent://com.sec.android.app.popupcalculator/#Intent;scheme=android-app;end" },
   { name: "Alliance Shield",            icon: "icons/alliance.png",          link: "intent://com.rrivenllc.shieldx/#Intent;scheme=android-app;end" },
   { name: "Android Hidden Settings",    icon: "icons/hidden.png",            link: "intent:#Intent;action=android.settings.SETTINGS;component=com.android.settings/.Settings;end" },
-  { name: "Login Google Account",       icon: "icons/google-account.png",    link: "intent://com.google.android.gsf.login.LoginActivity/#Intent;scheme=android-app;end" },
+  { name: "Login Google Account",       icon: "icons/google.png",            link: "intent://com.google.android.gsf.login.LoginActivity/#Intent;scheme=android-app;end" },
   { name: "Home Launcher",              icon: "icons/home.png",              link: "intent://com.sec.android.app.launcher/#Intent;scheme=android-app;end" },
   { name: "Google Maps",                icon: "icons/maps.png",              link: "intent://com.google.android.apps.maps/#Intent;scheme=android-app;end" },
   { name: "*#0*#",                      icon: "icons/dialer.png",            link: "tel:*#0*#/#Intent;scheme=android-app;end" },
