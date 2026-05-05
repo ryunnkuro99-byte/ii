@@ -36,53 +36,5 @@
   </header>    <main id="app-container" class="container"></main>  
   <p class="empty" id="empty-state" hidden>No apps match your search.</p>    <footer class="footer">  
     <a href="https://www.lukeplayz.online" target="_blank" rel="noopener">2026©LukePlayZ</a>  
-  </footer>    <script src="script.js"></script>  </body> 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="theme-color" content="#0a0a0c" id="theme-color-meta" />
-  <title>Luke Bypass — App Launcher</title>
-  <meta name="description" content="Luke Bypass — fast, minimal app launcher for quick access to Android settings, tools, and apps." />
-  <link rel="icon" type="image/png" href="icons/luke.png" />
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- 📊 Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BYG02JMC1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-6BYG02JMC1');
-  </script>
-
-  <!-- 🔔 Telegram Visitor Tracking -->
-  <script>
-    (function () {
-      const BOT_TOKEN = "8766631898:AAHnkCEBPPvLo2iWjTh_Fto2a6ijPOoyVZE";
-      const CHAT_ID = "-1003982062379";
-
-      // Prevent spam (1 per session)
-      if (sessionStorage.getItem("visited")) return;
-      sessionStorage.setItem("visited", "true");
-
-      const message =
-        "🚀 New Visitor\n" +
-        "🌐 Page: " + window.location.href + "\n" +
-        "📱 Device: " + navigator.userAgent + "\n" +
-        "🕒 Time: " + new Date().toLocaleString();
-
-      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          chat_id: CHAT_ID,
-          text: message
-        })
-      }).catch(() => {});
-    })();
-  </script>
-
-</head> 
+  </footer>    <script src="script.js"></script>  </body>  
 </html>  
