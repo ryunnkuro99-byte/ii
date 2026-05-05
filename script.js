@@ -90,8 +90,36 @@ function setupTheme() {
   });
 }
 
+function setupBackToTop() {
+  const btn = document.getElementById("back-to-top");
+  if (!btn) return;
+  const onScroll = () => {
+    if (window.scrollY > 400) btn.removeAttribute("hidden");
+    else btn.setAttribute("hidden", "");
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  onScroll();
+}
+
+function trackVisitor() {
+  try {
+    const key = "lb-tracked-" + location.pathname;
+    if (sessionStorage.getItem(key)) return;
+    sessionStorage.setItem(key, "1");
+    fetch("/api/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ page: location.pathname, ref: document.referrer || "direct" }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch (e) {}
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderApps();
   setupSearch();
   setupTheme();
+  setupBackToTop();
+  trackVisitor();
 });
