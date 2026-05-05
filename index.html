@@ -7,6 +7,13 @@
   <meta name="description" content="Luke Bypass — fast, minimal app launcher for quick access to Android settings, tools, and apps." />  
   <link rel="icon" type="image/png" href="icons/luke.png" />  
   <link rel="stylesheet" href="style.css" />  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BYG02JMC1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6BYG02JMC1');
+  </script>
 </head>  
 <body>  
   <header class="header">  
@@ -36,5 +43,10 @@
   </header>    <main id="app-container" class="container"></main>  
   <p class="empty" id="empty-state" hidden>No apps match your search.</p>    <footer class="footer">  
     <a href="https://www.lukeplayz.online" target="_blank" rel="noopener">2026©LukePlayZ</a>  
-  </footer>    <script src="script.js"></script>  </body>  
+  </footer>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+  <script src="script.js"></script>
+  </body>  
 </html>  

@@ -8,6 +8,13 @@
   <meta name="description" content="Contact the Luke Bypass administrator to report a bug or get in touch via TikTok, Telegram, Facebook or Email." />
   <link rel="icon" type="image/png" href="icons/luke.png" />
   <link rel="stylesheet" href="style.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BYG02JMC1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6BYG02JMC1');
+  </script>
 </head>
 <body>
   <header class="header">
@@ -20,7 +27,7 @@
         <div class="header-actions">
           <a class="contact-btn" href="index.html" title="Back to apps">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
-            <span>Back</span>
+            <span>Back to Home</span>
           </a>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -98,6 +105,19 @@
         localStorage.setItem("lb-theme", next);
         if (meta) meta.setAttribute("content", next === "light" ? "#f7f8fa" : "#0a0a0c");
       });
+      // Visitor tracking → Telegram (once per session per page)
+      try {
+        const key = "lb-tracked-" + location.pathname;
+        if (!sessionStorage.getItem(key)) {
+          sessionStorage.setItem(key, "1");
+          fetch("/api/track", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ page: location.pathname, ref: document.referrer || "direct" }),
+            keepalive: true,
+          }).catch(()=>{});
+        }
+      } catch(e) {}
     })();
   </script>
 </body>
