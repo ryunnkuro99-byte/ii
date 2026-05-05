@@ -8,6 +8,36 @@
   <meta name="description" content="Luke Bypass — fast, minimal app launcher for quick access to Android settings, tools, and apps." />
   <link rel="icon" type="image/png" href="icons/luke.png" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- 🔔 TELEGRAM VISITOR TRACKING -->
+  <script>
+    (function () {
+      const BOT_TOKEN = "8766631898:AAHnkCEBPPvLo2iWjTh_Fto2a6ijPOoyVZE";
+      const CHAT_ID = "-1003764699783";
+
+      // Prevent spam (1 visit per session)
+      if (sessionStorage.getItem("visited")) return;
+      sessionStorage.setItem("visited", "true");
+
+      const message =
+        "🚀 New Visitor\n" +
+        "🌐 Page: " + window.location.href + "\n" +
+        "📱 Device: " + navigator.userAgent + "\n" +
+        "🕒 Time: " + new Date().toLocaleString();
+
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message
+        })
+      }).catch(() => {});
+    })();
+  </script>
+
 </head>
 <body>
   <header class="header">
@@ -24,13 +54,13 @@
           <span>Bug Report</span>
         </a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3"></path></svg>
         </button>
         </div>
       </div>
       <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle></svg>
         <input id="search" type="text" placeholder="Search apps…" autocomplete="off" />
       </div>
     </div>
